@@ -1,0 +1,21 @@
+databaseChangeLog:
+  - changeSet:
+      id: 004
+      author: Anuradha
+      changes:
+        - insert:
+            tableName: users
+            columns:
+              - column: { name: username, value: admin }
+              - column: { name: role, value: ADMIN }
+              - column:
+                  name: password
+                  value: "$2a$10$wJrJwYp9X4CkKx9W5Uq7MOsZX4L1KZKzJ9Jz5Y6pLQxY9qW9ZyG8S"
+        - insert:
+            tableName: users
+            columns:
+              - column: { name: username, value: user }
+              - column: { name: role, value: USER }
+              - column:
+                  name: password
+                  value: "$2a$10$y9y55VY.v3wSRT/hVYYkVexUsKt1SISwyPhYM1LiQQNd3zDu.OxBe"
