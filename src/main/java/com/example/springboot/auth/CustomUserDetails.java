@@ -1,6 +1,6 @@
 package com.example.springboot.auth;
 
-import com.example.springboot.model.User;
+import com.example.springboot.entities.User;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;

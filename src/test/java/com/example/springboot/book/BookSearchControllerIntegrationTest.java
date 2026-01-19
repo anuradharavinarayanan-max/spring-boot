@@ -1,8 +1,8 @@
 package com.example.springboot.book;
 
-import com.example.springboot.dto.BookDoc;
-import com.example.springboot.dto.OpenLibrarySearchResponse;
-import com.example.springboot.service.OpenLibraryService;
+import com.example.springboot.dtos.BookDoc;
+import com.example.springboot.dtos.OpenLibrarySearchResponse;
+import com.example.springboot.services.OpenLibraryService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;

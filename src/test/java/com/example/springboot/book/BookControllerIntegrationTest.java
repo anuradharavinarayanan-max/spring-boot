@@ -1,6 +1,6 @@
 package com.example.springboot.book;
 
-import com.example.springboot.dto.BookDTO;
+import com.example.springboot.dtos.BookDTO;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
