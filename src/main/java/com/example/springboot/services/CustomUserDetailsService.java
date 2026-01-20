@@ -16,14 +16,12 @@ import org.slf4j.LoggerFactory;
 public class CustomUserDetailsService implements UserDetailsService {
 
     private final UserRepository userRepository;
-    private final PasswordEncoder passwordEncoder;
     private static final Logger log =
             LoggerFactory.getLogger(CustomUserDetailsService.class);
 
 
-    public CustomUserDetailsService(UserRepository userRepository, PasswordEncoder passwordEncoder) {
+    public CustomUserDetailsService(UserRepository userRepository) {
         this.userRepository = userRepository;
-        this.passwordEncoder = passwordEncoder;
     }
 
     @Override
@@ -32,17 +30,5 @@ public class CustomUserDetailsService implements UserDetailsService {
                 .map(CustomUserDetails::new)
                 .orElseThrow(() ->
                         new UsernameNotFoundException("User not found"));
-    }
-
-
-    public void createUser(String username, String rawPassword, Role role) {
-
-        User user = new User();
-        user.setUsername(username);
-        user.setPassword(passwordEncoder.encode(rawPassword));
-        user.setRole(role);
-
-        userRepository.save(user);
-        log.info("Created user with username={}", user.getUsername());
     }
 }

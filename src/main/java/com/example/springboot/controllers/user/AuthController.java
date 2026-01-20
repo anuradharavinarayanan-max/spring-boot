@@ -1,5 +1,6 @@
 package com.example.springboot.controllers.user;
 
+import com.example.springboot.auth.CustomUserDetails;
 import com.example.springboot.dtos.AuthResponse;
 import com.example.springboot.dtos.LoginRequest;
 import com.example.springboot.dtos.RefreshTokenRequest;
@@ -40,7 +41,10 @@ public class AuthController {
                         request.getUsername(), request.getPassword())
         );
 
-        User user = (User) authentication.getPrincipal();
+        CustomUserDetails userDetails =
+                (CustomUserDetails) authentication.getPrincipal();
+
+        User user = userDetails.getUser();
 
         String accessToken = jwtService.generateAccessToken(user);
         String refreshToken = refreshTokenService.create(user);
